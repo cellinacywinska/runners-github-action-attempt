@@ -1,23 +1,19 @@
-# Hello world JavaScript action
+# Create/destroy runners action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+This action creates and destroys the runners.
 
 ## Inputs
 
-### `who-to-greet`
+Think about which inputs should be given to the Action from a workflow. Suggested are: 
+path to project's config  (config.yaml) that Pulumi needs
+repo secrets that Pulumi needs (this will probably be a list of optional params depending on which cloud provider will be used)
+which cloud provider  should be used to deploy resources
+which arch should be used (amd64 or arm64)
 
-**Required** The name of the person to greet. Default `"World"`.
+Additionally, fail the workflow if arch == arm64 and provider == GCP.
 
 ## Outputs
 
-### `time`
-
-The time we greeted you.
 
 ## Example usage
 
-```yaml
-uses: actions/hello-world-javascript-action@main
-with:
-  who-to-greet: 'Mona the Octocat'
-```
