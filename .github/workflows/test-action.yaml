@@ -1,0 +1,18 @@
+on: [push]
+
+name: Test
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: cellinacywinska/runners-github-action-attempt@main
+        with:
+          pulumi-config-path: 'marijana'
+          pulumi-goal: 'kida'
+          pulumi-stack-name: 'v1000'
+          pulumi-cloud-provider: 'hello'
+          cloud-architecture: 'ant'

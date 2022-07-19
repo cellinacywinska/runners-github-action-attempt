@@ -1,13 +1,35 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Create/destroy runners'
+description: 'Github action to create and destroy Runners'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  pulumi-config-path: 
+    description: 'A path to your Pulumi project config file'
     required: true
-    default: 'World'
+    default: ''
+  pulumi-goal:  
+    description: 'The name of the Pulumi goal. Supported values: create, destroy'
+    required: true
+    default: ''
+  pulumi-stack-name:
+    description: 'The name of the Pulumi stack.'
+    required: true
+    default: ''
+  pulumi-cloud-provider:
+    description: 'The name of the Pulumi cloud provider.' 
+    required: true
+    default: ''
+  cloud-architecture: 
+    description: 'Supported architecture names: amd64 or arm64' 
+    required: true
+    default: ''
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  time:
+    description: ''
 runs:
   using: 'node16'
   main: 'index.js'
+#   execute some pulumi code
+#  1. path to config.yaml
+#  2. which action: destroy or create 
+#  3. stack name
+#  4. provider
+#  5.arch
