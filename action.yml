@@ -24,6 +24,10 @@ inputs:
     description: 'Supported architecture names: amd64 or arm64' 
     required: true
     default: ''
+  pulumi-backend-url:
+    description: ''
+    required: true
+    default: ''
   github-app-id:
     description: 'The ID of the app linked to you repo (see main repo docs for a better explanation)'
     required: true
