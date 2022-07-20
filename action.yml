@@ -17,19 +17,49 @@ inputs:
     description: 'The name of the Pulumi cloud provider.' 
     required: true
     default: ''
+  pulumi-config-passphrase:
+    description: 'The passphrase that Pulumi will use to encrypt secrets'
+    required: true
   cloud-architecture: 
     description: 'Supported architecture names: amd64 or arm64' 
     required: true
     default: ''
-outputs:
-  time:
+  github-app-id:
+    description: 'The ID of the app linked to you repo (see main repo docs for a better explanation)'
+    required: true
+    default: ''
+  github-app-private-key:
+    description: 'The private key of the app linked to you repo (see main repo docs for a better explanation)'
+    required: true
+    default: ''
+  aws-access-key-id:
+    description: 'An access key id linked to you AWS account'
+    required: false
+    default: ''
+  aws-secret-access-key:
+    description: 'The secret access key of aws key id you have insert'
+    required: false
+    default: ''
+  aws-region:
+    description: 'The AWS region you want to use, eg. eu-west-2'
+    required: false
+    default: 'eu-west-2'
+  google-credentials:
+    description: 'Google cloud services credentials'
+    required: false
+    default: ''
+  google-project:
+    description: 'GCP project ID'
+    required: false
+    default: ''
+  google-region:
+    description: 'The google region'
+    required: false
+    default: ''
+  pulumi-access-token:
     description: ''
+    required: false
+    default: ''
 runs:
   using: 'node16'
   main: 'index.js'
-#   execute some pulumi code
-#  1. path to config.yaml
-#  2. which action: destroy or create 
-#  3. stack name
-#  4. provider
-#  5.arch
