@@ -65,7 +65,7 @@ try {
   core.info("Runners deployed!");
 
   core.info("Waiting some time");
-  await wait(1000);  
+  wait(1000);  
 
   core.info("Destroying the runners");
   shell.exec(`pulumi stack select ${stackName}`);
