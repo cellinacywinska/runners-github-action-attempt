@@ -5,6 +5,7 @@ This action creates and destroys the runners.
 ## Inputs: 
 
 **Required inputs:**
+
 pulumi-config-path: path to project's config (config.yaml) that Pulumi needs.
 
 pulumi-goal: the name of the Pulumi goal. Supported values: create, destroy.
@@ -23,6 +24,7 @@ github-app-private-key: The private key of the app linked to you repo (see main 
 
 
 **Not required inputs:**
+
 aws-access-key-id: an access key id linked to you AWS account.
 
 aws-secret-access-key: the secret access key of aws key id you have insert.
